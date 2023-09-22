@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { ingredientPropType } from 'prop-types';
 
 // описываю компонент ингридиента и передаю пропсы
-export function IngredientItem({ item, count, onClick }) {
+export function IngredientItem({ item, count }) {
   return (
-    <li className={styles.listItem} onClick={onClick}>
+    <li className={styles.listItem}>
       {count && <Counter count={1} size="default" extraClass="m-1" />}
       <img className="pl-4 pr-4" src={`${item.image}`} alt={`${item.name}`} />
       <div className={`p-1 ${styles.priceItem}`}>
@@ -20,6 +20,5 @@ export function IngredientItem({ item, count, onClick }) {
 
 IngredientItem.propTypes = {
     item: ingredientPropType,
-    count: PropTypes.number,
-    onClick: PropTypes.func
+    count: PropTypes.number
 };
