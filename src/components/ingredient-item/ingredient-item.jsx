@@ -1,10 +1,10 @@
 import { Counter, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import styles from './ingredient-item.module.css';
 import PropTypes from 'prop-types';
-import { ingredientPropType } from 'prop-types';
+import { ingredientPropType } from '../../utils/prop-types';
 
 // описываю компонент ингридиента и передаю пропсы
-export function IngredientItem({ item, count }) {
+function IngredientItem({ item, count }) {
   return (
     <li className={styles.listItem}>
       {count && <Counter count={1} size="default" extraClass="m-1" />}
@@ -19,6 +19,8 @@ export function IngredientItem({ item, count }) {
 };
 
 IngredientItem.propTypes = {
-    item: ingredientPropType,
+    items: ingredientPropType,
     count: PropTypes.number
 };
+
+export default IngredientItem;
