@@ -8,17 +8,17 @@ import { ingredientPropType } from '../../utils/prop-types';
 
 function BurgerIngredients ({ ingredients }) {
     const buns = useMemo(
-        () => ingredients.filter(item => item.type === "bun"),
+        () => ingredients.filter((item) => item.type === "bun"),
         [ingredients]
     );
 
     const sauces = useMemo(
-        () => ingredients.filter(item => item.type === "sauce"),
+        () => ingredients.filter((item) => item.type === "sauce"),
         [ingredients]
     );
 
     const fillings = useMemo(
-        () => ingredients.filter(item => item.type === "filling"),
+        () => ingredients.filter((item) => item.type === "filling"),
         [ingredients]
     );
 
@@ -29,26 +29,26 @@ function BurgerIngredients ({ ingredients }) {
             <div className={`custom-scroll pt-10 ${styles.ingredientsContainer}`}>
                 <h2 className="text text_type_main-medium">Булки</h2>
                 <ul className={`${styles.ingredientList}`}>
-                    {buns.map(item => (
+                    {buns.map((item) => (
                         <IngredientItem
-                        ingredients={item}
+                        item={item}
                         count={1}
                         key={item._id} />
                     ))}
                 </ul>
                 <h2 className="text text_type_main-medium">Соусы</h2>
                 <ul className={`${styles.ingredientList}`}>
-                    {sauces.map(item => (
+                    {sauces.map((item) => (
                         <IngredientItem
-                        ingredients={item}
+                        item={item}
                         key={item._id} />
                     ))}
                 </ul>
                 <h2 className="text text_type_main-medium">Начинки</h2>
                 <ul className={`${styles.ingredientList}`}>
-                    {fillings.map(item => (
+                    {fillings.map((item) => (
                         <IngredientItem
-                        ingredients={item}
+                        item={item}
                         key={item._id} />
                     ))}
                 </ul>

@@ -19,7 +19,7 @@ function IngredientItem({ item, count }) {
 };
 
 IngredientItem.propTypes = {
-    items: ingredientPropType,
+    item: ingredientPropType,
     count: PropTypes.number
 };
 
