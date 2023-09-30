@@ -4,4 +4,19 @@
 
 .ingredientsContainer {
     height: 756px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-content: space-between;
+}
+
+.ingredientsList {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.ingredientsList:last-of-type {
+    margin-left: 24px;
 }

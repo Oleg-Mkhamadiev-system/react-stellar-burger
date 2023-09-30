@@ -10,7 +10,7 @@ function IngredientItem({ item, count }) {
       {count && <Counter count={1} size="default" extraClass="m-1" />}
       <img className="pl-4 pr-4" src={`${item.image}`} alt={`${item.name}`} />
       <div className={`p-1 ${styles.priceItem}`}>
-        <span className="text text_type_digits-default">{item.price}</span>
+        <span className="text text_type_digits-default pr-1">{item.price}</span>
         <CurrencyIcon type="primary" />
       </div>
       <p className="text text_type_main-default">{item.name}</p>

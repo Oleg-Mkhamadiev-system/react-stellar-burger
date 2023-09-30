@@ -28,16 +28,16 @@ function BurgerIngredients ({ ingredients }) {
             <Tabs />
             <div className={`custom-scroll pt-10 ${styles.ingredientsContainer}`}>
                 <h2 className="text text_type_main-medium">Булки</h2>
-                <ul className={`${styles.ingredientList}`}>
+                <ul className={`${styles.ingredientsList} pl-4 pt-6 pb-10`}>
                     {buns.map((item) => (
                         <IngredientItem
-                        item={item}
                         count={1}
+                        item={item}
                         key={item._id} />
                     ))}
                 </ul>
                 <h2 className="text text_type_main-medium">Соусы</h2>
-                <ul className={`${styles.ingredientList}`}>
+                <ul className={`${styles.ingredientsList} pl-4`}>
                     {sauces.map((item) => (
                         <IngredientItem
                         item={item}
@@ -45,9 +45,10 @@ function BurgerIngredients ({ ingredients }) {
                     ))}
                 </ul>
                 <h2 className="text text_type_main-medium">Начинки</h2>
-                <ul className={`${styles.ingredientList}`}>
+                <ul className={`${styles.ingredientsList} pl-4`}>
                     {fillings.map((item) => (
                         <IngredientItem
+                        count={1}
                         item={item}
                         key={item._id} />
                     ))}
