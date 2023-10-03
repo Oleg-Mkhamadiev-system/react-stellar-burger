@@ -7,7 +7,7 @@ import { ingredientPropType } from '../../utils/prop-types';
 function IngredientItem({ item, count }) {
   return (
     <li className={styles.listItem}>
-      {count && <Counter count={1} size="default" extraClass="m-1" />}
+      {count && <Counter count={count} size="default" extraClass="m-1" />}
       <img className="pl-4 pr-4" src={`${item.image}`} alt={`${item.name}`} />
       <div className={`p-1 ${styles.priceItem}`}>
         <span className="text text_type_digits-default pr-1">{item.price}</span>

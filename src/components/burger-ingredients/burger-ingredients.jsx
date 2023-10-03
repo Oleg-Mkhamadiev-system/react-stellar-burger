@@ -17,8 +17,8 @@ function BurgerIngredients ({ ingredients }) {
         [ingredients]
     );
 
-    const fillings = useMemo(
-        () => ingredients.filter((item) => item.type === "filling"),
+    const mains = useMemo(
+        () => ingredients.filter((item) => item.type === "main"),
         [ingredients]
     );
 
@@ -29,28 +29,28 @@ function BurgerIngredients ({ ingredients }) {
             <div className={`custom-scroll pt-10 ${styles.ingredientsContainer}`}>
                 <h2 className="text text_type_main-medium">Булки</h2>
                 <ul className={`${styles.ingredientsList} pl-4 pt-6 pb-10`}>
-                    {buns.map((item) => (
+                    {buns.map((item, index) => (
                         <IngredientItem
                         count={1}
                         item={item}
-                        key={item._id} />
+                        key={item._id + index} />
                     ))}
                 </ul>
                 <h2 className="text text_type_main-medium">Соусы</h2>
                 <ul className={`${styles.ingredientsList} pl-4`}>
-                    {sauces.map((item) => (
+                    {sauces.map((item, index) => (
                         <IngredientItem
+                        count={1}
                         item={item}
-                        key={item._id} />
+                        key={item._id + index} />
                     ))}
                 </ul>
                 <h2 className="text text_type_main-medium">Начинки</h2>
                 <ul className={`${styles.ingredientsList} pl-4`}>
-                    {fillings.map((item) => (
+                    {mains.map((item, index) => (
                         <IngredientItem
-                        count={1}
                         item={item}
-                        key={item._id} />
+                        key={item._id + index} />
                     ))}
                 </ul>
             </div>

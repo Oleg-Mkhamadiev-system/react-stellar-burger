@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 export const ingredientPropType = PropTypes.shape({
   //укажите здесь prop-types для ингридиента
-    _id: PropTypes.number,
+    _id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     name: PropTypes.string,
     type: PropTypes.string,
     proteins: PropTypes.number,

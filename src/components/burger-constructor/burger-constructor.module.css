@@ -1,4 +1,12 @@
-.constructor-container {
+.burgerContainer {
     width: 600px;
-    height: 912px;
+}
+
+.componentsContainer {
+    height: 580px;
+    overflow-y: scroll;
+}
+
+.componentsItem {
+    display: flex;
 }
