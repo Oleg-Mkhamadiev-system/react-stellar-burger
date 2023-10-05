@@ -4,9 +4,9 @@ import { BurgerIcon, ListIcon, Logo, ProfileIcon } from '@ya.praktikum/react-dev
 function AppHeader () {
     return (
         <header className={styles.header}>
-            <nav className="content-container">
+            <nav className="content-container pt-4 pb-4">
               <section className={styles.content}>
-                <ul className={styles.list}>
+                <ul className={`${styles.list} pl-5`}>
                     <li className={styles.listItem && "pr-10"}>
                         <a href="#" className={styles.link}>
                           <BurgerIcon type="primary" />
@@ -20,12 +20,10 @@ function AppHeader () {
                         </a>
                     </li>
                 </ul>
-                <ul className={styles.list && "pr-30"}>
-                  <li className={styles.logo}>
+                <div className={styles.logo}>
                     <Logo />
-                  </li>
-                </ul>
-                <ul className={styles.list && "pl-30"}>
+                </div>
+                <ul className={`${styles.list} pr-6`}>
                    <li className={styles.listItem}>
                       <a href="#" className={styles.link}>
                       <ProfileIcon type="secondary" />

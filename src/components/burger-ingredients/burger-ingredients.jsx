@@ -24,11 +24,11 @@ function BurgerIngredients ({ ingredients }) {
 
     return (
         <section className={styles.container}>
-            <h1 className="text text_type_main-large pt-10">Соберите бургер</h1>
+            <h1 className="text text_type_main-large pt-10 pb-5">Соберите бургер</h1>
             <Tabs />
             <div className={`custom-scroll pt-10 ${styles.ingredientsContainer}`}>
                 <h2 className="text text_type_main-medium">Булки</h2>
-                <ul className={`${styles.ingredientsList} pl-4 pt-6 pb-10`}>
+                <ul className={`${styles.ingredientsList} pl-4 pt-6 pb-10 pr-2`}>
                     {buns.map((item, index) => (
                         <IngredientItem
                         count={1}
@@ -37,7 +37,7 @@ function BurgerIngredients ({ ingredients }) {
                     ))}
                 </ul>
                 <h2 className="text text_type_main-medium">Соусы</h2>
-                <ul className={`${styles.ingredientsList} pl-4`}>
+                <ul className={`${styles.ingredientsList} pl-4 pt-6 pb-8 pr-2`}>
                     {sauces.map((item, index) => (
                         <IngredientItem
                         count={1}

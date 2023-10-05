@@ -1,6 +1,5 @@
 import styles from './burger-constructor.module.css';
-import { DragIcon, CurrencyIcon, 
-    ConstructorElement, Button 
+import { ConstructorElement, DragIcon, CurrencyIcon, Button 
 } from '@ya.praktikum/react-developer-burger-ui-components';
 import { useMemo } from 'react';
 import { ingredientPropType } from '../../utils/prop-types';
@@ -8,7 +7,7 @@ import PropTypes from 'prop-types';
 
 function BurgerConstructor ({ ingredients }) {
     const buns = useMemo(
-        () => ingredients.filter((item) => item.typee === "bun"),
+        () => ingredients.filter((item) => item.type === "bun"),
         [ingredients]
     );
 
@@ -18,16 +17,20 @@ function BurgerConstructor ({ ingredients }) {
     );
 
     return (
-        <div className={`${styles.burgerContainer} pt-25 pl-10`}>
-            <section className="pl-4">
+        <div className={`${styles.burgerContainer} pt-25 pl-4 ml-10`}>
+            <section className="pl-8">
                 {buns.map((ingredient) => (
-                    <ConstructorElement
-                    type="top"
-                    isLocked={true}
-                    text={`${ingredient.name} (верх)`}
-                    price={ingredient.price}
-                    thumbnail={ingredient["image_mobile"]}
-                  />
+                    <div className={`${styles.burgerComponents} ml-6 pr-2`}> 
+                      <ConstructorElement
+                      extraClass="mt-4 mb-4"
+                      key={ingredient._id}
+                      type="top"
+                      isLocked={true}
+                      text={`${ingredient.name} (верх)`}
+                      price={ingredient.price}
+                      thumbnail={ingredient["image_mobile"]}
+                      />
+                    </div>
                 ))}
             </section>
             <section className={`custom-scroll ${styles.componentsContainer}`}>
@@ -36,6 +39,7 @@ function BurgerConstructor ({ ingredients }) {
                         <li className={`${styles.componentsItem}`}>
                             <DragIcon type="primary" />
                             <ConstructorElement
+                            extraClass="mb-4"
                             key={ingredient._id}
                             isLocked={false}
                             text={`${ingredient.name}`}
@@ -46,20 +50,23 @@ function BurgerConstructor ({ ingredients }) {
                     ))}
                 </ul>
             </section>
-            <section className="pl-4 pb-4">
+            <section className="pl-8">
                 {buns.map((ingredient) => (
-                    <ConstructorElement
-                    type="bottom"
-                    isLocked={true}
-                    text={`${ingredient.name} (верх)`}
-                    price={ingredient.price}
-                    thumbnail={ingredient["image_mobile"]}
-                  />
+                    <div className={`${styles.burgerComponents} ml-6 pr-2`}>
+                       <ConstructorElement
+                       key={ingredient._id}
+                       type="bottom"
+                       isLocked={true}
+                       text={`${ingredient.name} (верх)`}
+                       price={ingredient.price}
+                       thumbnail={ingredient["image_mobile"]}
+                       />
+                    </div>
                 ))}
             </section>
-            <section className={`${styles.infoContainer}`}>
-                <span className="text text_type_main-large">610</span>
-                <div className={`${styles.iconContainer}`}>
+            <section className={`${styles.infoContainer} pt-10 pr-4`}>
+                <span className="text text_type_main-large pr-2">610</span>
+                <div className={`${styles.iconContainer} pr-10`}>
                   <CurrencyIcon type="primary" />
                 </div>
                 <Button htmlType="button" type="primary" size="large">Оформить заказ

@@ -9,3 +9,11 @@
     display: flex;
     justify-content: center;
 }
+
+.visible {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
